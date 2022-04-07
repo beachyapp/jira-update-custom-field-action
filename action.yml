@@ -1,0 +1,30 @@
+name: 'JIRA update field value'
+description: 'Update value of a field (could be custom field)'
+inputs:
+  jira-user-email:
+    description: 'JIRA user email'
+    required: true
+    default: ''
+  jira-api-token:
+    description: 'JIRA API token'
+    required: true
+    default: ''
+  jira-base-url:
+    description: 'JIRA base URL'
+    required: true
+    default: ''
+  issue-key:
+    description: 'JIRA issue key'
+    required: true
+    default: ''
+  custom-field:
+    description: 'field you want to update'
+    required: true
+    default: ''
+  value:
+    description: 'value of the custom field'
+    required: true
+    default: ''
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
