@@ -31,22 +31,14 @@ This action will update a custom field on a JIRA issue to whatever value you spe
 ## Example usage
 
 ```
-
-public:
-
-uses: actions/jira-update-custom-field@....
-
-private:
-
-uses: ./.github/private-actions/jira-update-custom-field
 - name: Find JIRA issue keys by commits
   id: issue-key-from-commits
-  uses: ./.github/private-actions/jira-get-issue-key
+  uses: beachyapp/jira-get-issue-key-action@v0.1
   ....
   ....
 - name: Update summary of JIRA issue
   id: jira-update-custom-field-1
-  uses: ./.github/private-actions/jira-update-custom-field
+  uses: beachyapp/jira-update-custom-field-action@v0.1
   with:
     value: "this is a new summary"
     custom-field: "summary"
@@ -54,10 +46,9 @@ uses: ./.github/private-actions/jira-update-custom-field
     jira-user-email: ${{ secrets.JIRA_USER_EMAIL }}
     jira-api-token: ${{ secrets.JIRA_API_TOKEN }}
     jira-base-url: ${{ secrets.JIRA_BASE_URL }}
-
 - name: Update custom field of JIRA issue
   id: jira-update-custom-field-2
-  uses: ./.github/private-actions/jira-update-custom-field
+  uses: beachyapp/jira-update-custom-field-action@v0.1
   with:
     value: "new-value-here"
     custom-field: "customfield_10012"
