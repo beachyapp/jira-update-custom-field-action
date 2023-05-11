@@ -33,12 +33,12 @@ This action will update a custom field on a JIRA issue to whatever value you spe
 ```
 - name: Find JIRA issue keys by commits
   id: issue-key-from-commits
-  uses: beachyapp/jira-get-issue-key-action@v0.1
+  uses: beachyapp/jira-get-issue-key-action@v0.2
   ....
   ....
 - name: Update summary of JIRA issue
   id: jira-update-custom-field-1
-  uses: beachyapp/jira-update-custom-field-action@v0.1
+  uses: beachyapp/jira-update-custom-field-action@v0.2
   with:
     value: "this is a new summary"
     custom-field: "summary"
@@ -48,7 +48,7 @@ This action will update a custom field on a JIRA issue to whatever value you spe
     jira-base-url: ${{ secrets.JIRA_BASE_URL }}
 - name: Update custom field of JIRA issue
   id: jira-update-custom-field-2
-  uses: beachyapp/jira-update-custom-field-action@v0.1
+  uses: beachyapp/jira-update-custom-field-action@v0.2
   with:
     value: "new-value-here"
     custom-field: "customfield_10012"
